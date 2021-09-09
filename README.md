@@ -3,7 +3,7 @@ Repository untuk teman-teman PKL &amp; Magang SOLONET belajar PHP Dasar
 
 
 
-# Terkait PHP
+## Terkait PHP
 
 <div align="center">
     <a href="https://php.net">
@@ -14,7 +14,7 @@ Repository untuk teman-teman PKL &amp; Magang SOLONET belajar PHP Dasar
     </a>
 </div>
 
-# The PHP Interpreter
+## The PHP Interpreter
 
 PHP is a popular general-purpose scripting language that is especially suited to
 web development. Fast, flexible and pragmatic, PHP powers everything from your
