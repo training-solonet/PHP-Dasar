@@ -1,5 +1,5 @@
 <?php
-include_once("functions.php");
+include_once 'functions.php';
 
 $id = $_GET["id"];
 
@@ -43,6 +43,7 @@ if (isset($_POST["submit"])) {
 <body>
     <div class="container position-absolute top-50 start-50 translate-middle">
         <form method="POST">
+            <input type="hidden" value="<?= $siswaUpdate["id"] ?>" name="id">
             <div class="mb-3">
                 <label for="nis" class="form-label">NIS</label>
                 <input value=<?= $siswaUpdate["nis"]; ?> required name="nis" type="text" class="form-control" id="nis">
