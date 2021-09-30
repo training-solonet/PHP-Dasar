@@ -82,9 +82,11 @@ if (isset($_POST["submit"])) {
                     <label for="kelas">Kelas</label>
                     <select name="id_kelas" class="form-select" aria-label="Default select example" required>
                         <?php foreach ($dataKelasUpdate as $showDataKelasUpdate) : ?>
-                            <?php if ($dataSiswaUpdate["id_kelas"] == $showDataKelasUpdate["id"]) : ?>
-                                <?php echo '<option ' . $selected . ' value="' . $dataSiswaUpdate["id_kelas"] . '">' . $showDataKelasUpdate["nama_kelas"] . '</option>'; ?>
-                            <?php endif; ?>
+                            <?php if ($dataSiswaUpdate["id_kelas"] == $showDataKelasUpdate["id"]) {
+                                echo '<option ' . "selected" . ' value="' . $showDataKelasUpdate["id"] . '">' . $showDataKelasUpdate["nama_kelas"] . '</option>';
+                            } else {
+                                echo '<option ' . ' value="' . $showDataKelasUpdate["id"] . '">' . $showDataKelasUpdate["nama_kelas"] . '</option>';
+                            } ?>
                         <?php endforeach; ?>
                     </select>
                 </div>
