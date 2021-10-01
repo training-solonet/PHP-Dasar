@@ -5,15 +5,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>Tugas Array</title>
   </head>
 
   <body>
 
-  <div class="container">
-        <h1>Data Siswa</h1>
+  <div class="side-bar">
+    <h1 class = "side-text">Data Siswa</h1>
+    <ul>
+      <li>Section</li>
+      <li>Section</li>
+      <li>Section</li>
+    </ul>
+  </div>
+
+  <div class="header">
       <p class="sub-judul" >Halaman menampilkan Data siswa</p>
-      <a href="tambah-siswa.php" class="btn btn-sm btn-primary mb-2">TAMBAH SISWA</a>
+      <div class="bttn">
+      <a href="tambah-siswa.php" class="btn  btn-success mb-2">TAMBAH SISWA</a>
+      </div>
+    </div>
+  <div class="container isi">
+    
+
     <table class="table">
   <thead>
     <tr>
@@ -32,14 +47,21 @@
     $no = 1;
     $query = mysqli_query($conn,"SELECT * FROM siswa");
     while($row = mysqli_fetch_array($query)){
-    
+      
     ?>
+
     <tr>
       <!-- <th scope="row">1</th> -->
       <td><?php echo $no++ ?></td>
       <td><?php echo $row['nis']?></td>
       <td><?php echo $row['nama']?></td>
-      <td><?php echo $row['jenis_kelamin']?></td>
+      <td><?php if($row['jenis_kelamin']=="P")
+                  {
+                    echo "Perempuan";
+                  }else{
+                    echo "Laki-Laki";
+                  }
+                  ?></td>
       <td><?php echo $row['kelas']?></td>
       <td class="aksi">
         <a href="edit-siswa.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-info">EDIT</a>

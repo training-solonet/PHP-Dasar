@@ -4,11 +4,11 @@ include('koneksi.php');
 
 $id = $_GET['id'];
 
-$query = "SELECT * FROM siswa WHERE id = $id";
+$query = "SELECT * FROM siswa WHERE id = $id";  
 
-$result = mysqli_query($conn, $query);
+$result = mysqli_query($conn, $query); //berfungsi untuk mengirimkan perintah query ke database mysql.
 
-$row = mysqli_fetch_array($result);
+$row = mysqli_fetch_array($result); // berfungsi untuk menangkap data dari hasil perintah 
 
 ?>
 
@@ -36,26 +36,31 @@ $row = mysqli_fetch_array($result);
 
             <div class="mb-3">
                 <label class="form-label">Nama Siswa</label>
-                <input name="nama" value="<?php echo $row['nama'];?>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name="nama" value="<?php echo $row['nama']?>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">NIS</label>
-                <input name="nis" value="<?php echo $row['nis'];?>" type="text" class="form-control" id="exampleInputPassword1">
+                <input name="nis"    value="<?php echo $row['nis']?>" type="text" class="form-control" id="exampleInputPassword1" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Jenis Kelamin</label>
-                    <select name="jenis_kelamin" values="<?php echo $row['jenis_kelamin'];?>" class="form-select" aria-label="Default select example ">
-                        <option selected>pilih</option>
-                        <option value="L">Laki-laki</option>
-                        <option value="P">Perempuan</option>
-                    </select>
+                    <select name="jenis_kelamin" class="form-select" aria-label="Default select example">
+                    <?php
+
+                    if($row['jenis_kelamin'] == 'L'){
+                        echo '<option selected value="L">Laki-laki</option>'.'<option value="P">Perempuan</option>';
+                    }else {
+                        echo '<option selected value="P">Perempuan</option>'.'<option value="L">Laki-laki</option>';
+                    }
+                    
+                    ?>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Kelas</label>
-                <input name="kelas" value="<?php echo $row['kelas'];?>" type="text" class="form-control" id="exampleInputPassword1">
+                <input name="kelas" value="<?php echo $row['kelas'];?>" type="text" class="form-control" id="exampleInputPassword1" required>
             </div>
             <button type="submit" class="mb-2 btn btn-primary">Submit</button>
             </form>

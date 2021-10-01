@@ -20,12 +20,12 @@
             <form method=POST action="simpan-siswa.php">
             <div class="mb-3">
                 <label class="form-label">Nama Siswa</label>
-                <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label">NIS</label>
-                <input name="nis" type="text" class="form-control" id="exampleInputPassword1">
+                <input name="nis" type="text" class="form-control" id="exampleInputPassword1" required>
             </div>
 
             <div class="mb-3">
@@ -39,7 +39,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Kelas</label>
-                <input name="kelas" type="text" class="form-control" id="exampleInputPassword1">
+                <input name="kelas" type="text" class="form-control" id="exampleInputPassword1" required>
             </div>
             <button name="submit" type="submit" class="mb-2 btn btn-primary">Submit</button>
             </form>
