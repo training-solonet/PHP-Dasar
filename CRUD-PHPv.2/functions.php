@@ -70,3 +70,48 @@ function delete($id)
     mysqli_query($connection, "DELETE FROM siswa WHERE id = $id");
     return mysqli_affected_rows($connection);
 }
+
+function regist($method)
+{
+    global $connection;
+
+    $username = stripslashes(htmlspecialchars(mysqli_real_escape_string($connection, $method["username"])));
+    $password = htmlspecialchars(mysqli_real_escape_string($connection, $method["password"]));
+    $confirmPassword = $method["confirmPassword"];
+
+    $result = mysqli_query($connection, "SELECT username FROM user WHERE username = '$username'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "
+            <script>
+                alert ('Username Already Exist');
+            </script>
+        ";
+        return false;
+    }
+
+    if ($password !== $confirmPassword) {
+        echo "
+            <script>
+                alert ('Password not same');
+            </script>
+        ";
+        return false;
+    }
+
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    $query = "
+        INSERT INTO user
+        (
+            username,
+            password
+        )
+        VALUES
+        (
+            '$username',
+            '$password'
+        )
+    ";
+    mysqli_query($connection, $query);
+    return mysqli_affected_rows($connection);
+}

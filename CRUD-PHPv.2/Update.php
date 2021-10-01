@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: Login.php");
+}
+
 require_once 'functions.php';
 $id = $_GET["id"];
 $dataSiswaUpdate = query("SELECT * FROM siswa WHERE id = $id")[0];
