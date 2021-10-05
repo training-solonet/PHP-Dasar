@@ -1,8 +1,8 @@
 <?php
-session_start();
-if (!isset($_SESSION["login"])) {
-    header("Location: Login.php");
-}
+// session_start();
+// if (!isset($_SESSION["login"])) {
+//     header("Location: Login.php");
+// }
 
 require_once 'functions.php';
 $dataSiswa = query(
@@ -36,6 +36,7 @@ $dataSiswa = query(
         <h1>Data Siswa SMK N 2 Surakarta</h1>
         <p>Data updated on 2021</p>
         <a href="Insert.php"><button type="button" class="btn btn-warning mb-3">Tambah Data Siswa</button></a>
+        <a href="Logout.php"><button type="button" class="btn btn-secondary mb-3">Logout</button></a>
         <table id="tabel_guru" class="table table-striped" style="width:100%">
             <thead>
                 <tr>

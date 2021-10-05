@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "db_siswa");
+$connection = mysqli_connect("localhost", "root", "123", "db_siswa");
 
 function query($query)
 {

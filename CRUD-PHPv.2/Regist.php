@@ -1,8 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION["login"])) {
-    header("Location: Login.php");
-}
+
 
 require_once 'functions.php';
 
@@ -15,7 +12,7 @@ if (isset($_POST["submit"])) {
             </script>
         ";
     } else {
-        echo mysqli_errno($connection);
+        echo mysqli_error($connection);
     }
 }
 
