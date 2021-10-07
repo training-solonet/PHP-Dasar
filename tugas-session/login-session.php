@@ -5,10 +5,11 @@ if (isset($_POST["submit"])){
     $username = $_POST["username"];
     $password = $_POST["password"];
 
+    $_SESSION["name"] = "admin";
+    $_SESSION["pass"] = "admin";
+
     if ($username == "admin" && $password == "admin"){
-      $_SESSION["name"] = "admin";
-      $_SESSION["pass"] = "admin";
-      header('Location: array.php');
+      header('Location: array-session.php');
       exit;
     }else {
       echo "pw atau us anda salah";

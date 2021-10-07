@@ -12,6 +12,9 @@ include('config.php');
     
     if($conn->query($query)){
         header('location: index.php');
+        // if ($conn->query($query_kelas)){
+            // header('location: index.php');
+        // }
     } else {
         echo "data anda tidak berhasil diperbarui";
     }

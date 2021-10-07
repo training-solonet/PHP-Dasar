@@ -2,8 +2,8 @@
 
 <?php 
 session_start();
-  if(!isset($_SESSION["pass"])){
-    header("Location: login.php");
+  if(!isset($_SESSION["name"])){
+    header("Location: login-session.php");
     exit;
 }
   
@@ -50,7 +50,7 @@ $siswa = [
   <body>
 
         <div class="container">
-
+          <a href="log-out.php">logout</a>
         <h1>Data Siswa</h1>
       <p class="sub-judul" >Halaman menampilkan Data siswa</p>
     <table class="table">
