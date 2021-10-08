@@ -52,7 +52,7 @@
                 </div> -->
 
                 <div class="form-outline">
-                  <input type="username" id="username" class="form-control form-control-lg" name="username" placeholder="Your Username" required/>
+                  <input type="username" id="username" class="form-control form-control-lg" name="username" placeholder="Enter your Username" required/>
                   <label class="form-label" for="username"></label>
                 </div>
 

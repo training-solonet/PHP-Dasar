@@ -32,6 +32,11 @@
         $_SESSION['login']= true;
         header("Location: index.php");
         exit;
+      }else{
+        echo "<script>
+        alert('Incorrect username or password.');
+        document.location.href='login.php';
+        </script>";
       }
   
     } 
